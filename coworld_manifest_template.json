@@ -1,0 +1,191 @@
+{
+  "tags": [
+    "strategy",
+    "programming",
+    "battlecode"
+  ],
+  "game": {
+    "name": "battlecode-2025",
+    "description": "MIT Battlecode 2025 with the original Java 21 engine, maps, rules, and per-robot bytecode budgets.",
+    "owner": "Metta-AI",
+    "player_runtime": "game-hosted",
+    "runnable": {
+      "type": "game",
+      "image": "{{GAME_IMAGE}}",
+      "run": [
+        "battlecode2025",
+        "serve"
+      ],
+      "source_url": "https://github.com/Metta-AI/coworld-battlecode-2025",
+      "resources": {
+        "requests": {
+          "cpu": "2",
+          "memory": "4Gi",
+          "ephemeral-storage": "4Gi"
+        },
+        "limits": {
+          "cpu": "2",
+          "memory": "4Gi"
+        }
+      }
+    },
+    "config_schema": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tokens"
+      ],
+      "properties": {
+        "tokens": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "map": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "default": "DefaultSmall"
+        },
+        "player_options": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "package": {
+                "type": "string",
+                "pattern": "^[A-Za-z_$][A-Za-z0-9_$]*(\\.[A-Za-z_$][A-Za-z0-9_$]*)*$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "results_schema": {
+      "type": "object",
+      "required": [
+        "scores",
+        "winner_slot",
+        "rounds",
+        "win_type",
+        "map",
+        "packages",
+        "policy_sha256",
+        "engine_revision"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scores": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "enum": [
+              0,
+              1
+            ]
+          }
+        },
+        "winner_slot": {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "rounds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "win_type": {
+          "type": "integer"
+        },
+        "map": {
+          "type": "string"
+        },
+        "packages": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_sha256": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "engine_revision": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      }
+    },
+    "protocols": {
+      "player": {
+        "type": "text",
+        "value": "Upload the unchanged Java scaffold zipForSubmit submission.zip (packages at ZIP root, or src/<package>/RobotPlayer.java). Select the case-sensitive entrypoint with league preference package=<package>. The original RobotController/Clock API executes inside the JVM with upstream instrumentation."
+      },
+      "global": {
+        "type": "text",
+        "value": "GET /client/global shows episode status and links to the original Battlecode replay viewer after completion. /global is a WebSocket sending JSON phase/result snapshots and answering Ping frames. This initial port does not stream live board frames. Replays are original gzip-compressed FlatBuffers .bc25 files."
+      }
+    },
+    "docs": {
+      "readme": {
+        "type": "text",
+        "value": "Battlecode 2025: original Java 21 JVM engine, bytecode limits and maps. Upload an unchanged Java scaffold submission.zip; choose the package through the league submission preference. Slots 0/1 are A/B; winner scores 1, loser 0. See https://github.com/Metta-AI/coworld-battlecode-2025 for instructions."
+      }
+    },
+    "replay_viewer": {
+      "bundle": "build/replay-viewer",
+      "replay_compression": "identity"
+    }
+  },
+  "player": [
+    {
+      "type": "player",
+      "id": "example",
+      "name": "Original example player",
+      "description": "Unmodified Battlecode 2025 scaffold examplefuncsplayer.",
+      "file": "players/example",
+      "source_url": "https://github.com/battlecode/battlecode25-scaffold/tree/40dbb9b28e75ef5aa4b47dc0ca74bc73ecc3012f/java/src/examplefuncsplayer"
+    }
+  ],
+  "variants": [
+    {
+      "id": "default-small",
+      "name": "Default Small",
+      "description": "Upstream DefaultSmall map with original seed and round limit.",
+      "game_config": {
+        "map": "DefaultSmall"
+      }
+    }
+  ],
+  "certification": {
+    "game_config": {
+      "map": "DefaultSmall"
+    },
+    "players": [
+      {
+        "player_id": "example"
+      },
+      {
+        "player_id": "example"
+      }
+    ]
+  },
+  "episode_timeout_minutes": 60
+}
