@@ -1,0 +1,99 @@
+[
+  {
+    "name": "The-Kragle",
+    "repository": "https://github.com/battlecode-archive/2025-The-Kragle",
+    "revision": "0fb4b7839efc52a1406b82becf8950bcbef1f6a8",
+    "source_directory": "java/src",
+    "package": "quals_current_submission",
+    "selection_note": "Explicitly named qualifier submission; archive postmortem says the team did not qualify for finals."
+  },
+  {
+    "name": "Just-Woke-Up",
+    "repository": "https://github.com/battlecode-archive/2025-Just-Woke-Up",
+    "revision": "ba5976b09bd230d43b8c87efc4c34a1680592202",
+    "source_directory": "java/src",
+    "package": "v57_Optimaler",
+    "selection_note": "Highest numbered archived player; README identifies winning team but not exact finals package."
+  },
+  {
+    "name": "Gone-Whalin",
+    "repository": "https://github.com/battlecode-archive/2025-Gone-Whalin",
+    "revision": "d74560d74618f5cd28e6eeb66a8dfe4b5212f471",
+    "source_directory": "src",
+    "package": "bot1",
+    "selection_note": "Configured teamA in archived gradle.properties; last commit mentions submit 8, which has no separately named package."
+  },
+  {
+    "name": "confused",
+    "repository": "https://github.com/battlecode-archive/2025-confused",
+    "revision": "bb21870cec74c9991c6a880cead3b24e5c0c7ac9",
+    "source_directory": "java/src",
+    "package": "finals",
+    "selection_note": "README explicitly links finals package."
+  },
+  {
+    "name": "Om-Nom",
+    "repository": "https://github.com/battlecode-archive/2025-Om-Nom",
+    "revision": "bc2f945b13c78cfaf8331f59fabcd7e16d53c71f",
+    "source_directory": "java/src",
+    "package": "current",
+    "selection_note": "README/makefile designate current generated from the unchanged Jinja templates; reproduce make zip generation mode.",
+    "generate_jinja": true
+  },
+  {
+    "name": "placeholder-name-2",
+    "repository": "https://github.com/battlecode-archive/2025-placeholder-name-2",
+    "revision": "ceb8e07f4ea74df2136495784d50e24a79ee5a10",
+    "source_directory": "java/src",
+    "package": "v9",
+    "selection_note": "Highest numbered archived player; exact final tournament entrypoint is undocumented."
+  },
+  {
+    "name": "podemice",
+    "repository": "https://github.com/battlecode-archive/2025-podemice",
+    "revision": "5f58f6e7fa334ceba9034d7847fa30dbc3246ec0",
+    "source_directory": ".",
+    "package": "yorktown",
+    "selection_note": "Latest gameplay-changing commit 3b2aab6 modifies yorktown; later commits only import saved sources. Exact finals entrypoint is undocumented."
+  },
+  {
+    "name": "Old-But-Gold",
+    "repository": "https://github.com/battlecode-archive/2025-Old-But-Gold",
+    "revision": "fa0181b4925d086a7b0a1ff646766a65fc2ed3fc",
+    "source_directory": ".",
+    "package": "basic45",
+    "selection_note": "Only archived RobotPlayer package."
+  },
+  {
+    "name": "lobster-roll",
+    "repository": "https://github.com/battlecode-archive/2025-lobster-roll",
+    "revision": "438769c95dd828de8fa5fa0fbd3e22f5348f1dbf",
+    "source_directory": "java/src",
+    "package": "V10",
+    "selection_note": "Highest numbered archived player; exact final tournament entrypoint is undocumented."
+  },
+  {
+    "name": "subscribe-to-caterpillow",
+    "repository": "https://github.com/battlecode-archive/2025-subscribe-to-caterpillow",
+    "revision": "9939feca2a02c09bb9f708d0476e840d839b2026",
+    "source_directory": "java/src",
+    "package": "caterpillow",
+    "selection_note": "Team-named primary package; exact final tournament entrypoint is undocumented."
+  },
+  {
+    "name": "immutable",
+    "repository": "https://github.com/battlecode-archive/2025-immutable",
+    "revision": "f84d1caabdde0e762de8c34a6533f09d8002e8d8",
+    "source_directory": "java/src",
+    "package": "immanentize",
+    "selection_note": "Only non-example archived RobotPlayer package."
+  },
+  {
+    "name": "SPAARK",
+    "repository": "https://github.com/battlecode-archive/2025-SPAARK",
+    "revision": "63165da768ad1e087e3f8e4f6ee84e1a51d3a014",
+    "source_directory": "src",
+    "package": "TSPAARKHS",
+    "selection_note": "README identifies TSPAARKHS as high-school tournament snapshot; submitted indicators differed."
+  }
+]
