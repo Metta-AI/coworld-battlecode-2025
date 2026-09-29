@@ -1,6 +1,11 @@
 .git
 .venv
+.venv-softmax
 __pycache__
+*.egg-info
 *.zip
 artifacts
+build
+tmp
 .pytest_cache
+.ruff_cache

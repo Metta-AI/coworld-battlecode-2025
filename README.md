@@ -28,7 +28,7 @@ coworld player list
 coworld player use ply_YOUR_PLAYER_ID
 bash ./gradlew --no-daemon zipForSubmit
 coworld upload-policy --file submission.zip --name "My Battlecode Player"
-coworld submit "My Battlecode Player:v1" --league LEAGUE_ID \
+coworld submit "My Battlecode Player:v1" --league league_63b80edd-aa47-4eb9-bc8b-159b7dfc7545 \
   --preference package=myplayer
 ```
 
@@ -99,9 +99,10 @@ OUTPUT` accepts `{"version":1,"players":[{"uri":"...","package":"myplayer"},
 The output directory must be empty.
 
 Publish with `coworld upload-coworld coworld_manifest.json --wait-certification`.
-The separate 2025 league uses Coworld-owned archive bots, mirrored two-seat
-matches and Elo ranking. Keep new league rounds paused until certification and
-real archived-player matches pass.
+The [separate 2025 league](https://softmax.com/observatory/v2?detail=league:league_63b80edd-aa47-4eb9-bc8b-159b7dfc7545)
+uses Coworld-owned archive bots, mirrored two-seat matches and Elo ranking,
+with a 12-hour interval and a $15 daily budget. Keep new league rounds paused
+until certification and real archived-player matches pass.
 
 This repository and scaffold example are GPL-3.0. Archived players retain their
 upstream provenance and licenses.
